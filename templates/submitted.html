@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Submitted</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+	<div class="wrapper">
+		<p>First Name: {{ session["firstname"] }}</p>
+		<p>Last Name: {{ session["lastname"] }}</p>
+		<p>Email: {{ session["email"] }}</p>
+		<p>Password: {{ passwordstars }}</p>
+		<p>Birthday: {{ session["birthday"] }}</p>
+		
+	</div>
+</body>
+</html>

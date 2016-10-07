@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Registration Form</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+	<div class="wrapper">
+		<h1>Survey</h1>
+		<form action="/process" method="post">
+
+			<span class="formElement">Firstname: <input type="text" name="firstname" value="{{ session['firstname']}}"></span>
+			{% with first = get_flashed_messages(category_filter=["firstname"]) %}
+				{% if first %}
+				    {%- for msg in first %}
+				    <p>{{ msg }}</p>
+				    {% endfor -%}
+				{% endif %}
+			{% endwith %}
+
+			<span class="formElement">Lastname: <input type="text" name="lastname" value="{{ session['lastname']}}"></span>
+			{% with last = get_flashed_messages(category_filter=["lastname"]) %}
+				{% if last %}
+				    {%- for msg in last %}
+				    <p>{{ msg }}</p>
+				    {% endfor -%}
+				{% endif %}
+			{% endwith %}
+
+
+			<span class="formElement">Email: <input type="text" name="email" value="{{ session['email']}}"></span>
+			{% with email = get_flashed_messages(category_filter=["email"]) %}
+				{% if email %}
+				    {%- for msg in first %}
+				    <p>{{ msg }}</p>
+				    {% endfor -%}
+				{% endif %}
+			{% endwith %}
+
+			<span class="formElement">Password: <input type="text" name="password" value="{{ session['password']}}"></span>
+			<span class="formElement">Confirm Password: <input type="text" name="confirmpassword" value="{{ session['confirmpassword']}}"></span>
+			<span class="formElement">Date of Birth: <input type="text" name="birthday"  value="{{ session['birthday']}}" placeholder="mm/dd/yyyy"></span>
+			<input type="submit" value="Submit" class="formElement">
+		</form>
+	</div>
+</body>
+</html>

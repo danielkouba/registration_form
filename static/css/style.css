@@ -1,0 +1,19 @@
+*{
+	margin:0;
+	padding:0;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.wrapper{
+	width:400px;
+	height:300px;
+	margin: 0px auto;
+	border:2px solid black;
+	padding-left: 50px;
+}
+.formElement{
+	display:block;
+	margin-top: 10px;
+}
+input.formElement{
+	margin-left:300px;
+}
